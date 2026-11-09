@@ -296,23 +296,6 @@ themes: [
         // { lead: 'July 2022',     title: 'Smart India Hackathon Finalist', sub: 'Top 5 teams nationwide · email spoofing detection, sponsored by the Ministry of External Affairs, India' }
       ]
     },
-    { 
-      id: 'experience', label: 'Experience',
-      rows: [
-        { lead: 'Aug 2024 – now', title: 'Graduate Research Assistant', sub: 'University of Missouri · LLM security through adversarial robustness, activation-based threat detection, and representation-level safety, alongside RAG and evidence-grounded reasoning for critical-domain applications ' },
-        { lead: 'Jun – Jul 2025', title: 'Graduate Student Coordinator · <a href="https://reu.rnet.missouri.edu/REU25.html" target="_blank" rel="noopener noreferrer">NSF REU Program</a>', sub: 'University of Missouri · Coordinated undergraduate research activities, supported student mentorship and project progress, and facilitated research meetings, technical presentations, and program activities.'},
-        { lead: 'Jun – Jul 2023', title: 'AI/ML Intern', sub: 'Airports Authority of India, Delhi · LLM-powered chatbot for internal aviation document interaction and workflow automation' },
-        { lead: 'Jun – Jul 2022', title: 'Research Assistant', sub: 'MISN Group, IIT Delhi · Federated learning and incentive mechanisms for privacy-preserving healthcare AI' }
-      ]
-    },
-    {
-      id: 'education', label: 'Education',
-      rows: [
-        { lead: '2025 – now',  title: 'Ph.D. in Computer Science', sub: 'University of Missouri, Columbia · Advisor: Dr. Prasad Calyam' },
-        { lead: '2024 – 2026', title: 'M.S. in Computer Science', sub: 'University of Missouri, Columbia · Advisor: Dr. Prasad Calyam' },
-        { lead: '2020 – 2024', title: 'B.Tech. in Computer Science', sub: 'Jaypee University, Madhya Pradesh, India' }
-      ]
-    },
     {
       id: 'talks', label: 'Talks',
       rows: [
@@ -341,6 +324,23 @@ themes: [
           { label: 'instructor', url: 'https://srinivas-sharan.github.io/' }
         ]
       }
+      ]
+    },
+    { 
+      id: 'experience', label: 'Experience',
+      rows: [
+        { lead: 'Aug 2024 – now', title: 'Graduate Research Assistant', sub: 'University of Missouri · LLM security through adversarial robustness, activation-based threat detection, and representation-level safety, alongside RAG and evidence-grounded reasoning for critical-domain applications ' },
+        { lead: 'Jun – Jul 2025', title: 'Graduate Student Coordinator · <a href="https://reu.rnet.missouri.edu/REU25.html" target="_blank" rel="noopener noreferrer">NSF REU Program</a>', sub: 'University of Missouri · Coordinated undergraduate research activities, supported student mentorship and project progress, and facilitated research meetings, technical presentations, and program activities.'},
+        { lead: 'Jun – Jul 2023', title: 'AI/ML Intern', sub: 'Airports Authority of India, Delhi · LLM-powered chatbot for internal aviation document interaction and workflow automation' },
+        { lead: 'Jun – Jul 2022', title: 'Research Assistant', sub: 'MISN Group, IIT Delhi · Federated learning and incentive mechanisms for privacy-preserving healthcare AI' }
+      ]
+    },
+    {
+      id: 'education', label: 'Education',
+      rows: [
+        { lead: '2025 – now',  title: 'Ph.D. in Computer Science', sub: 'University of Missouri, Columbia · Advisor: Dr. Prasad Calyam' },
+        { lead: '2024 – 2026', title: 'M.S. in Computer Science', sub: 'University of Missouri, Columbia · Advisor: Dr. Prasad Calyam' },
+        { lead: '2020 – 2024', title: 'B.Tech. in Computer Science', sub: 'Jaypee University, Madhya Pradesh, India' }
       ]
     }
     // {
