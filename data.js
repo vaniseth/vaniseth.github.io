@@ -290,7 +290,7 @@ themes: [
       id: 'awards', label: 'Awards',
       rows: [
         { lead: 'Apr 2026', title: 'Outstanding Graduate Poster Award', sub: 'Ranked top among graduate students across all engineering departments, University of Missouri' },
-        { lead: 'Feb 2026', title: 'Winner — Agentic AI for Real-World Impact Hackathon', sub: 'Built an AI-driven Campus Safety Infrastructure Analysis System' },
+        { lead: 'Feb 2026', title: 'Winner - Agentic AI for Real-World Impact Hackathon', sub: 'Built an AI-driven Campus Safety Infrastructure Analysis System' },
         { lead: 'March 2026', title: '3rd Place - Show Me Course Projects ', sub: 'Built FaceGuard-AI is a deepfake detection system designed to identify manipulated media, combat misinformation, and protect public trust.' },
         { lead: 'August 2024', title: 'Full Tuition Scholarship', sub: 'M.S. in Computer Science, University of Missouri, Columbia' }
         // { lead: 'July 2022',     title: 'Smart India Hackathon Finalist', sub: 'Top 5 teams nationwide · email spoofing detection, sponsored by the Ministry of External Affairs, India' }
