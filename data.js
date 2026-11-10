@@ -274,7 +274,7 @@ themes: [
       award: '',
       tag: '',
       title: 'Closed-Loop CNT Growth Using Retrieval Augmented Generation and Human Feedback',
-      authors: 'Vani Seth, [Coauthors]',
+      authors: 'Upasana Roy, Vani Seth, Mahady Hasan Rayhan, Ashish Pandey, Mauro Lemus Alarcon, Matthew Maschmann, Prasad Calyam',
       venue: 'IEEE ICHMS ’25',
       venueLong: '2025 IEEE International Conference on Human-Machine Systems',
       links: [
