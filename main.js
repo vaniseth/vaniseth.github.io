@@ -130,36 +130,71 @@
       // News text is your own trusted content, so simple HTML (<a>, <strong>, <em>) is allowed.
       return '<li class="row"><span class="row-lead">' + esc(n.date) + '</span><span class="row-body">' + n.text + '</span></li>';
     }).join('');
-    sizeNews();
+    // sizeNews();
+    clampList(newsList, S.newsVisible || 5);
   }
-  function sizeNews() {
-    var limit = S.newsVisible || 5;
-    var rows = newsList.children;
-    newsList.classList.add('news-scroll');
+  // function sizeNews() {
+  //   var limit = S.newsVisible || 5;
+  //   var rows = newsList.children;
+  //   newsList.classList.add('news-scroll');
+  //   if (rows.length <= limit) {
+  //     newsList.style.maxHeight = '';
+  //     newsList.style.overflowY = '';
+  //     newsList.classList.remove('scrollable', 'more-below');
+  //     newsList.removeAttribute('tabindex');
+  //     return;
+  //   }
+  //   // Measure with the list unclamped, then clamp to the first `limit` rows.
+  //   newsList.style.maxHeight = 'none';
+  //   var first = rows[0], last = rows[limit - 1];
+  //   var height = last.getBoundingClientRect().bottom - first.getBoundingClientRect().top;
+  //   newsList.style.maxHeight = Math.ceil(height) + 'px';
+  //   newsList.style.overflowY = 'auto';   // set inline so it works even with an older style.css
+  //   newsList.classList.add('scrollable');
+  //   newsList.setAttribute('tabindex', '0');
+  //   updateNewsFade();
+  // }
+  // function updateNewsFade() {
+  //   var atEnd = newsList.scrollTop + newsList.clientHeight >= newsList.scrollHeight - 2;
+  //   newsList.classList.toggle('more-below', !atEnd);
+  // }
+  // newsList.addEventListener('scroll', updateNewsFade, { passive: true });
+  // window.addEventListener('resize', sizeNews);
+  // if (document.fonts && document.fonts.ready) document.fonts.ready.then(sizeNews);
+
+    function clampList(list, limit) {
+    if (!list || list.hidden) return;
+    var rows = list.children;
+    list.classList.add('news-scroll');
     if (rows.length <= limit) {
-      newsList.style.maxHeight = '';
-      newsList.style.overflowY = '';
-      newsList.classList.remove('scrollable', 'more-below');
-      newsList.removeAttribute('tabindex');
+      list.style.maxHeight = ''; list.style.overflowY = '';
+      list.classList.remove('scrollable', 'more-below');
+      list.removeAttribute('tabindex');
       return;
     }
-    // Measure with the list unclamped, then clamp to the first `limit` rows.
-    newsList.style.maxHeight = 'none';
+    list.style.maxHeight = 'none';
     var first = rows[0], last = rows[limit - 1];
     var height = last.getBoundingClientRect().bottom - first.getBoundingClientRect().top;
-    newsList.style.maxHeight = Math.ceil(height) + 'px';
-    newsList.style.overflowY = 'auto';   // set inline so it works even with an older style.css
-    newsList.classList.add('scrollable');
-    newsList.setAttribute('tabindex', '0');
-    updateNewsFade();
+    list.style.maxHeight = Math.ceil(height) + 'px';
+    list.style.overflowY = 'auto';
+    list.classList.add('scrollable');
+    list.setAttribute('tabindex', '0');
+    updateFade(list);
+    if (!list._fadeBound) {
+      list.addEventListener('scroll', function () { updateFade(list); }, { passive: true });
+      list._fadeBound = true;
+    }
   }
-  function updateNewsFade() {
-    var atEnd = newsList.scrollTop + newsList.clientHeight >= newsList.scrollHeight - 2;
-    newsList.classList.toggle('more-below', !atEnd);
+  function updateFade(list) {
+    var atEnd = list.scrollTop + list.clientHeight >= list.scrollHeight - 2;
+    list.classList.toggle('more-below', !atEnd);
   }
-  newsList.addEventListener('scroll', updateNewsFade, { passive: true });
-  window.addEventListener('resize', sizeNews);
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(sizeNews);
+  function resizeLists() {
+    clampList(newsList, S.newsVisible || 5);
+    document.querySelectorAll('.tab-panel').forEach(function (p) { clampList(p, S.tabsVisible || 5); });
+  }
+  window.addEventListener('resize', resizeLists);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(resizeLists);
 
   /* ---------------- Publications */
   function boldName(authors) {
@@ -219,12 +254,16 @@
           '</div></li>';
         }).join('') + '</ul>';
     }).join('');
+    clampList(document.querySelector('.tab-panel:not([hidden])'), S.tabsVisible || 5);
   }
   function selectTab(btn, focus) {
     document.querySelectorAll('.tab').forEach(function (b) {
       var on = b === btn;
       b.setAttribute('aria-selected', on); b.tabIndex = on ? 0 : -1;
-      document.getElementById(b.getAttribute('aria-controls')).hidden = !on;
+      // document.getElementById(b.getAttribute('aria-controls')).hidden = !on;
+      var panel = document.getElementById(b.getAttribute('aria-controls'));
+      panel.hidden = !on;
+      if (on) clampList(panel, S.tabsVisible || 5);
     });
     if (focus) btn.focus();
   }
@@ -276,6 +315,38 @@
   });
   $('.lightbox-close').addEventListener('click', function () { lb.close(); });
   lb.addEventListener('click', function (e) { if (e.target === lb) lb.close(); });
+
+    /* ---------------- Email links: open the mail app AND copy the address */
+  var toast = document.createElement('div');
+  toast.className = 'toast';
+  toast.setAttribute('role', 'status');
+  toast.setAttribute('aria-live', 'polite');
+  document.body.appendChild(toast);
+  var toastTimer;
+  function showToast(msg) {
+    toast.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { toast.classList.remove('show'); }, 3200);
+  }
+  function copyText(text) {
+    if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(text);
+    return new Promise(function (resolve, reject) {
+      var ta = document.createElement('textarea');
+      ta.value = text; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy') ? resolve() : reject(); } catch (e) { reject(e); }
+      document.body.removeChild(ta);
+    });
+  }
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href^="mailto:"]');
+    if (!a) return;
+    var address = decodeURIComponent(a.getAttribute('href').replace(/^mailto:/i, '').split('?')[0]).trim();
+    copyText(address)
+      .then(function () { showToast('Email copied: ' + address); })
+      .catch(function () { showToast('Email: ' + address); });
+  });
 
   /* ---------------- Footer */
   $('#footer-copy').textContent = '© ' + new Date().getFullYear() + ' ' + S.name;

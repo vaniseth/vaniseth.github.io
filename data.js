@@ -36,10 +36,10 @@ bio: [
   cv: 'assets/Vani_Seth_CV.pdf',
 
   profileLinks: [
-    { label: 'Google Scholar', url: 'https://scholar.google.com/citations?view_op=list_works&hl=en&user=H2wkwRwAAAAJ' },                       // add your Scholar profile URL
+    { label: 'Google Scholar', url: 'https://scholar.google.com/citations?view_op=list_works&hl=en&user=H2wkwRwAAAAJ' },                       
     { label: 'GitHub',         url: 'https://github.com/vaniseth' },
     { label: 'LinkedIn',       url: 'https://www.linkedin.com/in/vaniseth' },
-    { label: 'Medium',         url: 'https://medium.com/@vaniseth' },
+    { label: 'Medium',         url: 'https://medium.com/@Vani_Seth' },
     { label: 'CV (PDF)',       url: 'assets/Vani_Seth_CV.pdf' },
     { label: 'Email',          url: 'mailto:vs4ky@missouri.edu' }
   ],
@@ -308,6 +308,25 @@ themes: [
         ]
       },
       {
+        lead: 'April 2026',
+        title: 'Layered Security and Trust Mechanisms for GenAI Applications in Critical Domains​',
+        sub: 'M.S. Thesis Defense, Advisor: Dr. Prasad Calyam, University of Missouri',
+        links: [
+          { label: 'thesis pdf', url: 'https://mospace.umsystem.edu/items/0e60a046-3725-478a-aba6-9c3443788448' },
+          { label: 'slides', url: 'https://mailmissouri-my.sharepoint.com/:p:/g/personal/vs4ky_umsystem_edu/IQCm4gDVqPBjSZlnaQkUE3W7Ab-De8jfuc6jvpgdsJ6hbeI?e=E7EtKJ' },
+          { label: 'thesis podcast', url: 'https://mailmissouri-my.sharepoint.com/:u:/g/personal/vs4ky_umsystem_edu/IQCIRO20bcGxSa4Brom1vWW8AWeiaQD-ug8J1DxjwZDLx80?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=eTfffT' },
+          { label: 'video', url: 'https://mailmissouri-my.sharepoint.com/:v:/g/personal/vs4ky_umsystem_edu/IQBxAwV9GFLASY-4g-Gfu8WzAYRcFZe4QCUJndTqOvXA7ZQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=r776L8' }
+        ]
+      },
+      {
+        lead: 'April 2026',
+        title: 'Automation of AI-based App Development on the Cloud​',
+        sub: 'Online tutorial for a class of ~145 students, hosted by <a href="https://apex.umsystem.edu/" target="_blank" rel="noopener">APEX: AI-Prepared Experiential Credential</a>, University of Missouri System',
+        links: [
+          { label: 'slides', url: 'https://mailmissouri-my.sharepoint.com/:p:/g/personal/vs4ky_umsystem_edu/IQAEocJGBso5T79UXjOoYLA6AWDoPVrYDLAczc_IKcJwhY0?e=mHw65y' }
+        ]
+      },
+      {
         lead: 'Oct 2025',
         title: 'AI/ML in Real-World Workflows: Cloud Computing and Fundamentals of RAG',
         sub: 'Invited guest lecture for CSC/EE 8001: End-to-End ML Systems, taught by Dr. Tanu Malik at the University of Missouri',
@@ -326,6 +345,38 @@ themes: [
       }
       ]
     },
+    {
+      id: 'service', label: 'Reviewing',
+      rows: [
+        { lead: '2027',       title: 'WWW',            sub: 'The ACM Web Conference' },
+        { lead: '2026',       title: 'IEEE TNSM (Journal)',      sub: 'IEEE Transactions on Network and Service Management' },
+        { lead: '2026',       title: 'ACM CIKM',       sub: 'ACM International Conference on Information and Knowledge Management' },
+        { lead: '2026',       title: 'CNSM',           sub: 'International Conference on Network and Service Management' },
+        { lead: '2026',       title: 'IEEE NFV-SDN',   sub: 'IEEE Conference on Network Function Virtualization and Software Defined Networks' },
+        { lead: '2026',       title: 'IEEE EI²',       sub: 'IEEE Conference on Energy Internet and Energy System Integration' },
+        { lead: '2025, 2026', title: 'IEEE/ACM UCC',   sub: 'IEEE/ACM International Conference on Utility and Cloud Computing' },
+        { lead: '2025, 2026', title: 'IEEE eScience',  sub: 'IEEE International Conference on eScience' },
+        { lead: '2025, 2026', title: 'IEEE IPCCC',     sub: 'IEEE International Performance, Computing, and Communications Conference' },
+        { lead: '2025',       title: 'IEEE BigData',   sub: 'IEEE International Conference on Big Data' },
+        { lead: '2025',       title: 'IEEE MASS',      sub: 'IEEE International Conference on Mobile Ad-Hoc and Smart Systems' },
+        { lead: '2025',       title: 'IEEE/IFIP NOMS', sub: 'IEEE/IFIP Network Operations and Management Symposium' },
+        { lead: '2025',       title: 'IEEE CCGridW',       sub: 'IEEE International Symposium on Cluster, Cloud and Internet Computing Workshops' }
+      ]
+    },
+    {
+      id: 'grants', label: 'Grants',
+      intro: 'My work is supported by the following awards and agreements.',
+      rows: [
+        { lead: 'NSF',       title: 'National Science Foundation (NSF)',
+          sub: 'Award Nos. OAC-241782, CMMI-2026847, OAC-2322063 and CNS-2209854' },
+        { lead: 'U.S. Army', title: 'U.S. Army Engineer Research and Development Center (ERDC)',
+          sub: 'Award No. W912HZ24C0022' },
+        { lead: 'CDC',       title: 'Centers for Disease Control and Prevention (CDC)',
+          sub: 'Through the Missouri Cancer Registry and Research Center (MCR): CDC–Missouri Department of Health and Senior Services (MODHSS) cooperative agreements NU58DP007130-04 and NU58DP007130-05' },
+        { lead: 'MODHSS',    title: 'Missouri Department of Health and Senior Services (MODHSS)',
+          sub: 'Surveillance contract between MODHSS and the University of Missouri, supporting the Missouri Cancer Registry and Research Center' }
+      ]
+    },
     { 
       id: 'experience', label: 'Experience',
       rows: [
@@ -334,22 +385,15 @@ themes: [
         { lead: 'Jun – Jul 2023', title: 'AI/ML Intern', sub: 'Airports Authority of India, Delhi · LLM-powered chatbot for internal aviation document interaction and workflow automation' },
         { lead: 'Jun – Jul 2022', title: 'Research Assistant', sub: 'MISN Group, IIT Delhi · Federated learning and incentive mechanisms for privacy-preserving healthcare AI' }
       ]
-    },
-    {
-      id: 'education', label: 'Education',
-      rows: [
-        { lead: '2025 – now',  title: 'Ph.D. in Computer Science', sub: 'University of Missouri, Columbia · Advisor: Dr. Prasad Calyam' },
-        { lead: '2024 – 2026', title: 'M.S. in Computer Science', sub: 'University of Missouri, Columbia · Advisor: Dr. Prasad Calyam' },
-        { lead: '2020 – 2024', title: 'B.Tech. in Computer Science', sub: 'Jaypee University, Madhya Pradesh, India' }
-      ]
     }
     // {
-    //   id: 'grants', label: 'Grants',
+    //   id: 'education', label: 'Education',
     //   rows: [
-    //     { lead: '[Year]', title: '[Grant or funding source]', sub: '[Funder · project]' }
-          // APEX course its with a grant with umkc and we are one of the tutors 
+    //     { lead: '2025 – now',  title: 'Ph.D. in Computer Science', sub: 'University of Missouri, Columbia · Advisor: Dr. Prasad Calyam' },
+    //     { lead: '2024 – 2026', title: 'M.S. in Computer Science', sub: 'University of Missouri, Columbia · Advisor: Dr. Prasad Calyam' },
+    //     { lead: '2020 – 2024', title: 'B.Tech. in Computer Science', sub: 'Jaypee University, Madhya Pradesh, India' }
     //   ]
-    // }
+    // }   
   ],
 
   /* ---------------- Gallery. Put photos in /images/gallery and set `src`.
@@ -357,8 +401,7 @@ themes: [
   galleryCategories: [
     { id: 'conf',  label: 'Conferences' },
     { id: 'talks', label: 'Posters & Talks' },
-    { id: 'life',  label: 'Lab & Life' },
-    { id: 'hack', label: 'Hackathons' },
+    { id: 'life',  label: 'Lab & Life' }
   ],
   gallery: [
     { src: 'images/gallery/research-day.jpg', category: 'talks', date: 'Apr 2026',   caption: 'Winner of the Outstanding Graduate Poster Award' },
